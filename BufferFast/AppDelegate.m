@@ -13,6 +13,16 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    
+    NSStatusItem* statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+    [statusItem setTitle:@"Status"];
+    [statusItem setHighlightMode:YES];
+
+}
+
+- (void)awakeFromNib {
+    
+        
 }
 
 @end
