@@ -8,8 +8,17 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDelegate, NSTableViewDataSource>
 
 @property (assign) IBOutlet NSWindow *window;
+
+
+@property (unsafe_unretained) IBOutlet NSTextView *postTextView;
+
+@property (weak) IBOutlet NSView *contentView;
+
+@property (weak) IBOutlet NSTableView *tableView;
+
+
 
 @end
