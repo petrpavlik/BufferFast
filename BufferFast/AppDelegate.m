@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "AFBufferHTTPClient.h"
-#import "StatusBarView.h"
 
 @interface AppDelegate ()
 
@@ -23,24 +22,30 @@
 {
     // Insert code here to initialize your application
     
-    float height = [[NSStatusBar systemStatusBar] thickness];
     
-    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:75];
-    
-    [self.statusItem setHighlightMode:YES];
-    [self.statusItem setTitle:@"BufferFast"];
-    //[self.statusItem setView:[[StatusBarView alloc] initWithFrame:viewFrame]];
-
-    [self.statusItem setTarget:self];
-    [self.statusItem setAction:@selector(statusItemClicked:)];
-
-    [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleURLEvent:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
     
     //CGRect frame = self.statusItem.view.window.frame;
     //[self.window setFrameOrigin:NSPointFromCGPoint(CGPointMake(frame.origin.x, frame.origin.y - self.window.frame.size.height))];
+    
+    SEL theSelector = @selector(logSomething);
+    NSNotificationCenter* theCenter = [NSNotificationCenter defaultCenter];
+    NSWindow* theWindow = [self window];
+    [theCenter addObserver:self selector:theSelector name:NSWindowDidResignKeyNotification object:theWindow];
+    //[theCenter addObserver:self selector:theSelector name:NSWindowDidResignMainNotification object:theWindow];
+    
+    
+    float height = [[NSStatusBar systemStatusBar] thickness];
+    CGRect frame = self.statusItem.view.window.frame;
+    [self.window setFrameOrigin:NSPointFromCGPoint(CGPointMake(frame.origin.x, frame.origin.y - self.window.frame.size.height - height))];
+    
+    [NSApp arrangeInFront:self.statusItem];
+    [self.window makeKeyAndOrderFront:self.statusItem];
+    [NSApp activateIgnoringOtherApps:YES];
 }
 
 - (void)awakeFromNib {
+    
+    [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleURLEvent:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -52,9 +57,18 @@
         [self loadData];
     }
     
-    /*[self.window setFrameOrigin:NSPointFromCGPoint(CGPointMake(self.s, 100))];
+    [self.window setLevel:NSFloatingWindowLevel];
+    [self.window setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces];
     
-    [self.popover showRelativeToRect:self.statusItem.view.frame ofView:self.statusItem.view preferredEdge:NSMinYEdge];*/
+    
+    float height = [[NSStatusBar systemStatusBar] thickness];
+    
+    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:height];
+    
+    StatusBarView* statusBarView = [[StatusBarView alloc] initWithFrame:CGRectMake(0, 0, height, height)];
+    statusBarView.delegate = self;
+    
+    [self.statusItem setView:statusBarView];
 }
 
 #pragma mark --
@@ -243,6 +257,24 @@
     }];
 }
 
+- (void)logSomething {
+    //[self.window resignMainWindow];
+    [self.window setIsVisible:NO];
+    NSLog(@"logging");
+}
 
+#pragma mark --
+
+- (void)statusBarView:(StatusBarView *)statusBarView didReceiveMouseDownEvent:(NSEvent *)event {
+    
+    //CGRect frame = [[[NSApp currentEvent] window] frame];
+    CGRect frame = self.statusItem.view.window.frame;
+    
+    [self.window setFrameOrigin:NSPointFromCGPoint(CGPointMake(frame.origin.x, frame.origin.y - self.window.frame.size.height))];
+    
+    [NSApp arrangeInFront:self.statusItem];
+    [self.window makeKeyAndOrderFront:self.statusItem];
+    [NSApp activateIgnoringOtherApps:YES];
+}
 
 @end

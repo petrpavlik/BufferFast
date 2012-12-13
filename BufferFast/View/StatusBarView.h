@@ -8,8 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class StatusBarView;
+
+@protocol StatusBarViewDelegate <NSObject>
+
+- (void)statusBarView:(StatusBarView*)statusBarView didReceiveMouseDownEvent:(NSEvent*)event;
+
+@end
+
 @interface StatusBarView : NSView
 
-
+@property(weak) id<StatusBarViewDelegate> delegate;
 
 @end

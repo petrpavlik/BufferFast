@@ -35,4 +35,26 @@
     NSRectFill(rect);
 }
 
+- (void)mouseDown:(NSEvent *)event
+{
+    [super mouseDown:event];
+    
+    NSLog(@"mouse down");
+    
+    /*NSRect frame = [[self window] frame];
+    NSPoint pt = NSMakePoint(NSMidX(frame), NSMinY(frame));
+    [controller toggleAttachedWindowAtPoint:pt];
+    clicked = !clicked;
+    [self setNeedsDisplay:YES];*/
+    
+    [self setNeedsDisplay:YES];
+    
+    [self.delegate statusBarView:self didReceiveMouseDownEvent:event];
+
+}
+
+- (BOOL)acceptsFirstMouse:(NSEvent *)theEvent {
+    return YES;
+}
+
 @end
