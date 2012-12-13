@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BufferFast/AppDelegate.m"
-         timestampString = "376947485.645113"
+         timestampString = "377118905.540335"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "94"
-         endingLineNumber = "94"
+         startingLineNumber = "108"
+         endingLineNumber = "108"
          landmarkName = "-numberOfRowsInTableView:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BufferFast/AppDelegate.m"
-         timestampString = "376947485.645113"
+         timestampString = "377118905.540335"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "101"
-         endingLineNumber = "101"
+         startingLineNumber = "115"
+         endingLineNumber = "115"
          landmarkName = "-tableView:viewForTableColumn:row:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,12 +34,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BufferFast/AppDelegate.m"
-         timestampString = "376945556.621758"
+         timestampString = "377118905.540335"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "28"
-         endingLineNumber = "28"
-         landmarkName = "-applicationDidFinishLaunching:"
+         startingLineNumber = "273"
+         endingLineNumber = "273"
+         landmarkName = "-statusBarView:didReceiveMouseDownEvent:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
