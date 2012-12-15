@@ -27,6 +27,10 @@
 		4BC01F5016725842003F6087 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC01F3016725841003F6087 /* Cocoa.framework */; };
 		4BC01F5816725842003F6087 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BC01F5616725842003F6087 /* InfoPlist.strings */; };
 		4BC01F5B16725842003F6087 /* BufferFastTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BC01F5A16725842003F6087 /* BufferFastTests.m */; };
+		4BCFF320167CC046003D30F5 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCFF31D167CC046003D30F5 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4BCFF321167CC046003D30F5 /* TVTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCFF31F167CC046003D30F5 /* TVTextView.m */; };
+		4BCFF324167CC24D003D30F5 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BCFF323167CC24D003D30F5 /* libicucore.dylib */; };
+		4BCFF32C167CD891003D30F5 /* AFPastebinHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCFF32B167CD891003D30F5 /* AFPastebinHTTPClient.m */; };
 		4BF7102E1677B2DA00FFA839 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF7102D1677B2DA00FFA839 /* SystemConfiguration.framework */; };
 		4BF710371677B7D400FFA839 /* StatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF710361677B7D400FFA839 /* StatusBarView.m */; };
 		4BF710421677C71E00FFA839 /* NSWindow+canBecomeKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF710411677C71E00FFA839 /* NSWindow+canBecomeKeyWindow.m */; };
@@ -83,6 +87,13 @@
 		4BC01F5716725842003F6087 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4BC01F5916725842003F6087 /* BufferFastTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BufferFastTests.h; sourceTree = "<group>"; };
 		4BC01F5A16725842003F6087 /* BufferFastTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BufferFastTests.m; sourceTree = "<group>"; };
+		4BCFF31C167CC046003D30F5 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		4BCFF31D167CC046003D30F5 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		4BCFF31E167CC046003D30F5 /* TVTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVTextView.h; sourceTree = "<group>"; };
+		4BCFF31F167CC046003D30F5 /* TVTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVTextView.m; sourceTree = "<group>"; };
+		4BCFF323167CC24D003D30F5 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		4BCFF32A167CD891003D30F5 /* AFPastebinHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFPastebinHTTPClient.h; path = API/AFPastebinHTTPClient.h; sourceTree = "<group>"; };
+		4BCFF32B167CD891003D30F5 /* AFPastebinHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFPastebinHTTPClient.m; path = API/AFPastebinHTTPClient.m; sourceTree = "<group>"; };
 		4BF7102D1677B2DA00FFA839 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4BF710351677B7D400FFA839 /* StatusBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatusBarView.h; path = View/StatusBarView.h; sourceTree = "<group>"; };
 		4BF710361677B7D400FFA839 /* StatusBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatusBarView.m; path = View/StatusBarView.m; sourceTree = "<group>"; };
@@ -95,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BCFF324167CC24D003D30F5 /* libicucore.dylib in Frameworks */,
 				4BF7102E1677B2DA00FFA839 /* SystemConfiguration.framework in Frameworks */,
 				4BC01F3116725841003F6087 /* Cocoa.framework in Frameworks */,
 			);
@@ -115,6 +127,7 @@
 		4BBA18BF16763F74000EB48F /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				4BCFF31B167CC046003D30F5 /* TVTextView */,
 				4BBA18C016763F8A000EB48F /* AFNetworking */,
 			);
 			name = Libraries;
@@ -152,6 +165,8 @@
 			children = (
 				4BBA18DE16763FE1000EB48F /* AFBufferHTTPClient.h */,
 				4BBA18DF16763FE1000EB48F /* AFBufferHTTPClient.m */,
+				4BCFF32A167CD891003D30F5 /* AFPastebinHTTPClient.h */,
+				4BCFF32B167CD891003D30F5 /* AFPastebinHTTPClient.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -159,6 +174,7 @@
 		4BC01F2116725841003F6087 = {
 			isa = PBXGroup;
 			children = (
+				4BCFF323167CC24D003D30F5 /* libicucore.dylib */,
 				4BF7102D1677B2DA00FFA839 /* SystemConfiguration.framework */,
 				4BC01F3616725841003F6087 /* BufferFast */,
 				4BC01F5316725842003F6087 /* BufferFastTests */,
@@ -241,6 +257,18 @@
 				4BC01F5616725842003F6087 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4BCFF31B167CC046003D30F5 /* TVTextView */ = {
+			isa = PBXGroup;
+			children = (
+				4BCFF31C167CC046003D30F5 /* RegexKitLite.h */,
+				4BCFF31D167CC046003D30F5 /* RegexKitLite.m */,
+				4BCFF31E167CC046003D30F5 /* TVTextView.h */,
+				4BCFF31F167CC046003D30F5 /* TVTextView.m */,
+			);
+			name = TVTextView;
+			path = Libraries/TVTextView;
 			sourceTree = "<group>";
 		};
 		4BF710341677B7B100FFA839 /* View */ = {
@@ -374,6 +402,9 @@
 				4BBA18E016763FE1000EB48F /* AFBufferHTTPClient.m in Sources */,
 				4BF710371677B7D400FFA839 /* StatusBarView.m in Sources */,
 				4BF710421677C71E00FFA839 /* NSWindow+canBecomeKeyWindow.m in Sources */,
+				4BCFF320167CC046003D30F5 /* RegexKitLite.m in Sources */,
+				4BCFF321167CC046003D30F5 /* TVTextView.m in Sources */,
+				4BCFF32C167CD891003D30F5 /* AFPastebinHTTPClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

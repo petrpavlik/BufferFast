@@ -8,18 +8,21 @@
 
 #import <Cocoa/Cocoa.h>
 #import "StatusBarView.h"
+#import "TVTextView.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDelegate, NSTableViewDataSource, StatusBarViewDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDelegate, NSTableViewDataSource, StatusBarViewDelegate, NSTextViewDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 
 
-@property (unsafe_unretained) IBOutlet NSTextView *postTextView;
+@property (unsafe_unretained) IBOutlet TVTextView *postTextView;
 
 @property (weak) IBOutlet NSView *contentView;
 
 @property (weak) IBOutlet NSTableView *tableView;
+@property (weak) IBOutlet NSTextField *twitterCharLimitInfo;
 
+@property (weak) IBOutlet NSButton *connectButton;
 
 
 @end
